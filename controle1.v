@@ -15,7 +15,7 @@ module controle1 (ONcontrole1, controle, jump, pc, endereco, zero, negativo, end
 		add = pc;
 		if (ONcontrole1) begin
 		case (controle)
-			beq:
+			beq: //branch equal
 				if(zero==1) begin
 					endout = add + endereco;
 					jump =0;
@@ -24,7 +24,7 @@ module controle1 (ONcontrole1, controle, jump, pc, endereco, zero, negativo, end
 					endout = add;
 					jump = 0;
 				end
-			beqi:
+			beqi: //branch equal immediate
 				if(zero==1) begin
 					endout = add + endereco;
 					jump =0;
@@ -33,7 +33,7 @@ module controle1 (ONcontrole1, controle, jump, pc, endereco, zero, negativo, end
 					endout = add;
 					jump = 0;
 				end
-			bneq:
+			bneq: //branch not equal
 				if(zero == 0) begin
 					endout = add + endereco;
 					jump =0;
@@ -42,7 +42,7 @@ module controle1 (ONcontrole1, controle, jump, pc, endereco, zero, negativo, end
 					endout = add;
 					jump = 0;
 				end
-			bneqi:
+			bneqi: //branch not equal immediate
 				if(zero == 0) begin
 					endout = add + endereco;
 					jump =0;
@@ -51,7 +51,7 @@ module controle1 (ONcontrole1, controle, jump, pc, endereco, zero, negativo, end
 					endout = add;
 					jump = 0;
 				end
-			blz:
+			blz: //branch less zero
 				if(negativo==1) begin
 					endout = add + endereco;
 					jump = 0;
@@ -60,7 +60,7 @@ module controle1 (ONcontrole1, controle, jump, pc, endereco, zero, negativo, end
 					endout = add;
 					jump = 0;
 				end
-			jmp: begin
+			jmp: begin //jump
 				endout = endereco;
 				jump = 1;
 			end
@@ -68,32 +68,32 @@ module controle1 (ONcontrole1, controle, jump, pc, endereco, zero, negativo, end
 				endout = endereco;
 				jump = 1;
 			end
-			jal: begin
+			jal: begin //jump and link
 				endout = endereco;
 				jump = 1;
 			end
-			blt: begin
+			blt: begin //branch less than
 				if(zero==1) 
 					endout = add + endereco;
 				else
 					endout = add;
 				jump = 0;
 			end
-			bgrt: begin
+			bgrt: begin //branch greater than
 				if(zero==1) 
 					endout = add + endereco;
 				else
 					endout = add;
 				jump = 0;
 			end
-			blti: begin
+			blti: begin //branch less than immediate
 				if(zero==1) 
 					endout = add + endereco;
 				else 
 					endout = add;
 				jump = 0;
 			end
-			bgrti: begin
+			bgrti: begin //branch greater than immediate
 				if(zero==1) 
 					endout = add + endereco;
 				else 
