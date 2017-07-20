@@ -1,4 +1,4 @@
-module controle1 (ONcontrole1, controle, jump, pc, endereco, zero, negativo, endout);
+module skip (ONcontrole1, controle, jump, pc, endereco, zero, negativo, endout);
 	input ONcontrole1;
 	input [5:0] controle;
 	input [8:0] endereco, pc;
